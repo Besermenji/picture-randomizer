@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, action } from '@storybook/react';
+import { object, withKnobs } from '@storybook/addon-knobs';
 import { PictureRandomizer } from './PictureRandomizer';
 
 const images = [
@@ -24,15 +25,18 @@ const style = {
 }
 
 storiesOf('PictureRandomizer', module)
+  .addDecorator(withKnobs)
   .add('without props', () => (
     <PictureRandomizer />
   )).add('with images array', () => (
     <PictureRandomizer 
-      images={images}
+      images={object('Images', images)}
+      onClick={action('onClick')}
     />
   )).add('custom css', () => (
     <PictureRandomizer
-      images={images}
-      style={style}
+      images={object('Images', images)}
+      style={object('Style', style)}
+      onClick={action('onClick')}
     />
   ));
