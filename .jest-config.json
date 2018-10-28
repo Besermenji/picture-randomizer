@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "testURL": "http://localhost",
+  "testMatch": [ "**/tests/**/*.test.js?(x)" ],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "setupFiles": ["<rootDir>/tests/register-context.js"]
+}
