@@ -1,0 +1,1 @@
+export { PictureRandomizer } from './components/PictureRandomizer/PictureRandomizer';
